@@ -23,7 +23,7 @@ def menu():
     2. Mostrar las clinicas que empiecen por una subcadena.
     3. Mostrar todos los animales de un propietario.
     4. Insertar un nuevo animal
-    5. Eliminar los animales de un propietario
+    5. Eliminar un animal
     6. Actualizar la direccion de una clinica
     '''
     print(menu)
