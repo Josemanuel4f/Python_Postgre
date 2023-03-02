@@ -36,7 +36,7 @@ def menu():
             
 def listarAminales(db):
     sql="select * from animales"
-    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    cursor = db.cursor(psycopg2.cursors.DictCursor)
     especies = []
     raza = 0
     try:
@@ -59,7 +59,7 @@ def listarAminales(db):
 def clinica(db):
     sub = input("Introduce una subcadena: ")
     sql = "select * from clinica"
-    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    cursor = db.cursor(psycopg2.cursors.DictCursor)
     try:
         cursor.execute(sql)
         registros = cursor.fetchall()
@@ -73,7 +73,7 @@ def clinica(db):
 def animalesPropietario(db):
     propietario = input("Introduce el nombre del propietario para mostrar sus animales: ")
     sql = "select a.nombre, codigo, especie, raza, color_pelo, DNI, p.nombre as Nombre, telefono from animales a ,propietarios p where a.DNI_propietario=p.DNI"
-    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    cursor = db.cursor(psycopg2.cursors.DictCursor)
     try:
         cursor.execute(sql)
         registros = cursor.fetchall()
